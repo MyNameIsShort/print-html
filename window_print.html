@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打印示例</title>
+
+    <style>
+        body {
+            font-family: Arial, "Microsoft YaHei", sans-serif;
+            padding: 20px;
+        }
+
+        .print-content {
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .print-btn {
+            padding: 10px 24px;
+            background: #1677ff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* 打印时隐藏不需要打印的元素 */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            body {
+                padding: 0;
+            }
+
+            .print-content {
+                border: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="print-content">
+        <h2>打印内容</h2>
+        <p>这里是需要打印的内容。</p>
+        <p>支持中文、图片、表格等 HTML 内容。</p>
+    </div>
+
+    <button class="print-btn no-print" onclick="printPage()">
+        打印
+    </button>
+
+    <script>
+        function printPage() {
+            window.print();
+        }
+    </script>
+
+</body>
+</html>
